@@ -1,0 +1,90 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define		CPUFILE		"/proc/stat"
+void main()
+{
+	char	str[256];
+	char	strname[128];
+	int	user, nice, sys, idle;
+	int	user_last, nice_last, sys_last, idle_last;
+	FILE	*pfile;
+
+	int	Total_1, Total_2;
+	double	Rate[128];
+	double  myrate = 0;
+	double	ftmp;
+		
+	pfile = fopen(CPUFILE, "rb");
+	if(pfile == NULL)
+	{
+		printf("Can't open %s \n", CPUFILE);
+		return;
+	}
+	fgets(str,255,pfile);
+	fclose(pfile);
+	
+	sscanf(str,"%s %d %d %d %d",strname, &user, &nice, &sys, &idle);
+	user_last = user;
+	nice_last = nice;
+	sys_last = sys;
+	idle_last = idle;
+	
+	int count = 0;
+	int i = 0;
+	
+	while(1)
+	{
+		for(i = 0; i < 5; i++)
+		{
+			usleep(100*1000);
+			
+			pfile = fopen(CPUFILE, "rb");
+			fgets(str,255,pfile);
+			fclose(pfile);
+			
+			sscanf(str,"%s %d %d %d %d",strname, &user, &nice, &sys, &idle);
+			
+		//		printf("%d %d %d %d \n", user,nice, sys, idle);
+			
+			Total_1=user_last+nice_last+sys_last+idle_last; 
+			Total_2=user+nice+sys+idle; 
+			
+			ftmp = Total_2 - Total_1;
+			Rate[i] =(user+sys) - (user_last+sys_last);
+			
+			Rate[i] = Rate[i] / ftmp * 100.00;
+			
+			user_last = user;
+			nice_last = nice;
+			sys_last  = sys;
+			idle_last = idle;		
+		}
+		
+		myrate = 0;
+		
+		for(i = 0; i < 5; i++)
+		{
+			myrate += Rate[i];		
+		}		
+		
+		printf("*******  CPU %f %% \n", myrate / 5);
+		
+	}
+}
+
+/*
+/proc/stat中的第一行； 
+每个CPU的例用率 
+/proc/stat中第二行从cpu0开始,如果只有一个CPU，那就只有cpu0 
+信息获取方法： 
+注意cpux：后面有4列数字，依次是user, nice, sys, idle的数值，不用去关心他们是什么意思。 
+对这个文件需要读取两遍，我们用total表示累计总资源，那么user+sys就是我们想要知道的累计CPU占用的资源。每个变量后面的数字表示它是第几次读文件得到的，用如下方法可算出CPU占用率： 
+Total_1=user_1+nice_1+sys_1+idle_1 
+Total_2=user_2+nice_2+sys_2+idle_2 
+Rate={[(user_2+sys_2)-(user_1+sys_1)]/（total_2-total_1）}*100 
+
+*/
+
+

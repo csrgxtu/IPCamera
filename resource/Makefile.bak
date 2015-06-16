@@ -1,0 +1,25 @@
+# Makefile for ARM and PC
+# Copyrith(C) 2004-2008 HHDigital Inc.
+
+OBJS = ./*.o
+
+all	: ALL
+clean	: CLEAN
+arm	: ARM
+pc	: X86
+
+ALL:
+	make -f Makefile.arm
+#	make -f Makefile.pc
+
+CLEAN:
+	rm -f hh5200 ${OBJS}
+	
+ARM:	
+	make -f Makefile.arm
+
+X86:	
+	make -f Makefile.pc 
+
+	
+

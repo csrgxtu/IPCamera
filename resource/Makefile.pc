@@ -1,0 +1,33 @@
+# Makefile_PC for PC
+
+SAMPLE_ROOT = $(PWD)
+DVS_ROOT = /user
+
+CC = gcc
+AR = ar
+
+LIBS = -lpthread -lrt
+
+INCLUDE = -I$(DVS_ROOT)/include
+LIBPATH =-L$(DVS_ROOT)/lib
+
+CFLAGS=  -g -Wall -DPC -L.
+CFLAGS += $(LIBPATH)
+CFLAGS += $(INCLUDE)
+
+RM = rm -f
+
+TARGET  = ./cpu
+
+OBJS =  cpu.o
+
+${TARGET}:${OBJS}
+		${CC} ${CFLAGS} ${LIBS} -o cpu ${OBJS} 
+
+#		/LinuxPPC/CDK/bin/powerpc-linux-strip --remove -section=.note --remove -section=.comment mginit
+#		cp ../lib/ppc/libtm3kapp.a ../../tm3kGUI/lib/ppc/ -f
+#		cp ../lib/ppc/libtm3kapp.a ../../tm3kGUI/src/lib/ -f
+#		cp *.h ../../tm3kGUI/include/ -f
+
+		${RM} *.o 
+	
