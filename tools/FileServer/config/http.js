@@ -8,8 +8,17 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.http.html
  */
+var express = require('express');
+var files = '/home/archer/Downloads';
 
 module.exports.http = {
+  middleware: {
+    custom: true,
+  },
+
+  customMiddleware: function(app) {
+    app.use('/files', express.static(files));
+  },
 
   /****************************************************************************
   *                                                                           *
