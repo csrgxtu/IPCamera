@@ -1,0 +1,20 @@
+# Makefile_PPC for PPC
+
+MPP_PATH := /opt/hisi-linux-nptl/arm-hisiv100-linux/target/bin
+
+CC = $(MPP_PATH)/arm-hisiv100nptl-linux-gcc
+AR = $(MPP_PATH)/arm-hisiv100nptl-linux-ar
+TP = $(MPP_PATH)/arm-hisiv100nptl-linuxstrip
+
+LIBS = -lpthread
+
+CFLAGS  = -DHI_DEBUG -g
+
+RM = rm -f
+
+TARGET  = ./HelloWorld
+
+OBJS =  HelloWorld.o
+
+${TARGET}:${OBJS}
+	${CC} ${CFLAGS} -o HelloWorld  ${OBJS} ${LIBS}
