@@ -1,0 +1,46 @@
+# Makefile_PPC for PPC
+
+MPP_PATH := /opt/hisi-linux-nptl/arm-hisiv100-linux/target/bin
+
+ifeq ($(chip),3512)
+CC = arm-hismall-linux-gcc
+AR = arm-hismall-linux-ar
+TP = arm-hismall-linux-strip
+endif
+
+ifeq ($(chip),3515)
+CC = arm-hismall-linux-gcc
+AR = arm-hismall-linux-ar
+TP = arm-hismall-linux-strip
+endif
+
+ifeq ($(chip),3516)
+CC = arm-hisiv100-linux-gcc
+AR = arm-hisiv100-linux-ar
+TP = arm-hisiv100-linux-strip
+endif
+
+ifeq ($(chip),3518)
+CC = $(MPP_PATH)/arm-hisiv100nptl-linux-gcc
+AR = $(MPP_PATH)/arm-hisiv100nptl-linux-ar
+TP = $(MPP_PATH)/arm-hisiv100nptl-linuxstrip
+endif
+
+
+LIBS = -lpthread
+
+CFLAGS  = -DHI_DEBUG -g
+
+RM = rm -f
+
+TARGET  = ./cpu
+
+OBJS =  cpu.o
+
+${TARGET}:${OBJS}
+	${CC} ${CFLAGS} -o cpu  ${OBJS} ${LIBS}
+
+		cp ./cpu  /hh5500/. -f
+
+		${RM} *.o 
+	
