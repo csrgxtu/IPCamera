@@ -281,9 +281,10 @@ int rtsp_cmd_setup(int sock, char *stream, struct rtsp_session *session)
          *
          * By now the program is using TCP in Intervealed mode, so no
          * extra ports are required.
+         */
 
-        buf_client_port = strstr(p, SETUP_TRNS_CLIENT);
-        buf_server_port = strstr(p, SETUP_TRNS_SERVER);
+        char *buf_client_port = strstr(p, SETUP_TRNS_CLIENT);
+        char *buf_server_port = strstr(p, SETUP_TRNS_SERVER);
 
         if (!buf_client_port || !buf_server_port) {
             RTSP_INFO("SETUP: Error, ports not defined in Transport header\n");
@@ -291,7 +292,7 @@ int rtsp_cmd_setup(int sock, char *stream, struct rtsp_session *session)
             return -1;
         }
 
-         client_port from
+        //client_port from;
         sep = strchr(buf_client_port + sizeof(SETUP_TRNS_CLIENT) - 1, '-');
         if (!sep) {
             RTSP_INFO("SETUP: client_port have an invalid format\n");
@@ -306,7 +307,7 @@ int rtsp_cmd_setup(int sock, char *stream, struct rtsp_session *session)
 
         client_port_from = atoi(field);
 
-        client_port to
+        //client_port to;
         p = strchr(sep, ';');
         if (!p) {
             p = strchr(sep, '\r');
@@ -321,7 +322,7 @@ int rtsp_cmd_setup(int sock, char *stream, struct rtsp_session *session)
         strncpy(field, sep + 1, p - sep - 1);
         client_port_to = atoi(field);
 
-         server_port from
+        //server_port from;
         sep = strchr(buf_server_port + sizeof(SETUP_TRNS_SERVER) - 1, '-');
         if (!sep) {
             RTSP_INFO("SETUP: server_port have an invalid format\n");
@@ -337,7 +338,7 @@ int rtsp_cmd_setup(int sock, char *stream, struct rtsp_session *session)
 
         server_port_from = atoi(field);
 
-         server_port to
+        //server_port to;
         p = strchr(sep, ';');
         if (!p) {
             p = strchr(sep, '\r');
@@ -351,7 +352,7 @@ int rtsp_cmd_setup(int sock, char *stream, struct rtsp_session *session)
         memset(field, '\0', sizeof(field));
         strncpy(field, sep + 1, p - sep - 1);
         server_port_to = atoi(field);
-        */
+        // */
 
         /* Session ID */
         p = strstr(buf, SETUP_SESSION);
