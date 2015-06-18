@@ -247,6 +247,7 @@ int rtsp_cmd_setup(int sock, char *stream, struct rtsp_session *session)
 
     memset(buf, '\0', sizeof(buf));
     //n = snprintf(buf, size, CMD_SETUP, stream, rtsp_cseq, client_port, client_port + 1);
+    //n = snprintf(buf, size, CMD_SETUP, stream, rtsp_cseq, RTSP_CLIENT_PORT, RTSP_CLIENT_PORT + 1);
     n = snprintf(buf, size, CMD_SETUP, stream, rtsp_cseq);
 
     DEBUG_REQ(buf);
@@ -352,7 +353,6 @@ int rtsp_cmd_setup(int sock, char *stream, struct rtsp_session *session)
         memset(field, '\0', sizeof(field));
         strncpy(field, sep + 1, p - sep - 1);
         server_port_to = atoi(field);
-        // */
 
         /* Session ID */
         p = strstr(buf, SETUP_SESSION);
