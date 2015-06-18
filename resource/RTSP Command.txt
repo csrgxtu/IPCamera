@@ -1,0 +1,110 @@
+07-02 19:50:03.290: I/ModaLog(7252): RTSP doOption
+
+07-02 19:50:03.290: I/RTSPClient(7252): OPTIONS rtsp://192.168.43.59:554/stream2 RTSP/1.0
+07-02 19:50:03.290: I/RTSPClient(7252): CSeq: 2
+07-02 19:50:03.290: I/RTSPClient(7252): User-Agent: LibVLC/2.1.3 (LIVE555 Streaming Media v2014.01.21)
+07-02 19:50:03.290: I/RTSPClient(7252): 
+
+07-02 19:50:03.900: I/ModaLog(7252): RTSP handle: tmp=RTSP/1.0 200 OK
+07-02 19:50:03.900: I/ModaLog(7252): CSeq: 2
+07-02 19:50:03.900: I/ModaLog(7252): Date: Thu, Jun 26 2014 20:33:20 GMT
+07-02 19:50:03.900: I/ModaLog(7252): Public: OPTIONS, DESCRIBE, SETUP, TEARDOWN, PLAY, GET_PARAMETER, SET_PARAMETER
+07-02 19:50:03.900: I/ModaLog(7252): 
+
+07-02 19:50:03.900: I/ModaLog(7252): RTSP handle: sysStatus=init
+
+07-02 19:50:04.200: I/ModaLog(7252): RTSP doDescribe
+
+07-02 19:50:04.200: I/RTSPClient(7252): DESCRIBE rtsp://192.168.43.59:554/stream2 RTSP/1.0
+07-02 19:50:04.200: I/RTSPClient(7252): CSeq: 3
+07-02 19:50:04.200: I/RTSPClient(7252): User-Agent: LibVLC/2.1.3 (LIVE555 Streaming Media v2014.01.21)
+07-02 19:50:04.200: I/RTSPClient(7252): Accept: application/sdp
+07-02 19:50:04.200: I/RTSPClient(7252): 
+
+07-02 19:50:04.505: I/ModaLog(7252): RTSP handle: tmp=RTSP/1.0 200 OK
+07-02 19:50:04.505: I/ModaLog(7252): CSeq: 3
+07-02 19:50:04.505: I/ModaLog(7252): Date: Thu, Jun 26 2014 20:33:20 GMT
+07-02 19:50:04.505: I/ModaLog(7252): Content-Base: rtsp://192.168.43.59/stream2/
+07-02 19:50:04.505: I/ModaLog(7252): Content-Type: application/sdp
+07-02 19:50:04.505: I/ModaLog(7252): Content-Length: 554
+07-02 19:50:04.505: I/ModaLog(7252): 
+07-02 19:50:04.505: I/ModaLog(7252): v=0
+07-02 19:50:04.505: I/ModaLog(7252): o=- 1403814664569521 1 IN IP4 192.168.43.59
+07-02 19:50:04.505: I/ModaLog(7252): s=Streamed by "Ambarella RTSP Server"
+07-02 19:50:04.505: I/ModaLog(7252): i=stream2
+07-02 19:50:04.505: I/ModaLog(7252): t=0 0
+07-02 19:50:04.505: I/ModaLog(7252): a=tool:Ambarella RTSP Server: Oct  8 2013 - 14:45:01
+07-02 19:50:04.505: I/ModaLog(7252): a=type:broadcast
+07-02 19:50:04.505: I/ModaLog(7252): a=control:*
+07-02 19:50:04.505: I/ModaLog(7252): a=range:npt=0-
+07-02 19:50:04.505: I/ModaLog(7252): a=x-qt-text-nam:Streamed by "Ambarella RTSP Server"
+07-02 19:50:04.505: I/ModaLog(7252): a=x-qt-text-inf:stream2
+07-02 19:50:04.505: I/ModaLog(7252): m=video 0 RTP/AVP 96
+07-02 19:50:04.505: I/ModaLog(7252): c=IN IP4 192.168.43.59
+07-02 19:50:04.505: I/ModaLog(7252): b=AS:1000
+07-02 19:50:04.505: I/ModaLog(7252): a=rtpmap:96 H264/90000
+07-02 19:50:04.505: I/ModaLog(7252): a=fmtp:96 packetization-mode=1; profile-level-id=4D401E; sprop-parameter-sets=Z01AHppmCg//gLUBAQFAAAD6QAAJxDkAAjUABGkLvLjIABGoACNIXeXCgA==,aO48gA==;
+07-02 19:50:04.505: I/ModaLog(7252): a=framerate:29.97
+07-02 19:50:04.505: I/ModaLog(7252): a=control:track2
+
+
+07-02 19:50:04.505: I/ModaLog(7252): RTSP handle: sysStatus=options
+
+07-02 19:50:04.805: I/RTSPClient(7252): SETUP rtsp://192.168.43.59/stream2/track2 RTSP/1.0
+07-02 19:50:04.805: I/RTSPClient(7252): CSeq: 4
+07-02 19:50:04.805: I/RTSPClient(7252): User-Agent: LibVLC/2.1.3 (LIVE555 Streaming Media v2014.01.21)
+07-02 19:50:04.805: I/RTSPClient(7252): Transport: RTP/AVP;unicast;client_port=62802-62803
+
+07-02 19:50:05.115: I/ModaLog(7252): RTSP handle: tmp=RTSP/1.0 200 OK
+07-02 19:50:05.115: I/ModaLog(7252): CSeq: 4
+07-02 19:50:05.115: I/ModaLog(7252): Date: Thu, Jun 26 2014 20:33:21 GMT
+07-02 19:50:05.115: I/ModaLog(7252): Transport: RTP/AVP;unicast;destination=255.255.255.0;source=192.168.43.59;client_port=62802-62803;server_port=50000-50001
+07-02 19:50:05.115: I/ModaLog(7252): Session: 3E8B6E2C
+07-02 19:50:05.115: I/ModaLog(7252): 
+
+07-02 19:50:05.115: I/ModaLog(7252): RTSP handle: sysStatus=describe
+
+07-02 19:50:05.420: I/RTSPClient(7252): PLAY rtsp://192.168.43.59/stream2/ RTSP/1.0
+07-02 19:50:05.420: I/RTSPClient(7252): CSeq: 5
+07-02 19:50:05.420: I/RTSPClient(7252): User-Agent: LibVLC/2.1.3 (LIVE555 Streaming Media v2014.01.21)
+07-02 19:50:05.420: I/RTSPClient(7252): Session: 3E8B6E2C
+07-02 19:50:05.420: I/RTSPClient(7252): 
+07-02 19:50:05.420: I/RTSPClient(7252): 
+07-02 19:50:05.420: I/RTSPClient(7252): Range: npt=0.000-
+07-02 19:50:05.420: I/RTSPClient(7252): 
+
+07-02 19:50:05.720: I/ModaLog(7252): RTSP handle: tmp=RTSP/1.0 200 OK
+07-02 19:50:05.720: I/ModaLog(7252): CSeq: 5
+07-02 19:50:05.720: I/ModaLog(7252): Date: Thu, Jun 26 2014 20:33:22 GMT
+07-02 19:50:05.720: I/ModaLog(7252): Range: npt=0.000-
+07-02 19:50:05.720: I/ModaLog(7252): Session: 3E8B6E2C
+07-02 19:50:05.720: I/ModaLog(7252): RTP-Info: url=rtsp://192.168.43.59/stream2/track2;seq=7134;rtptime=1183995753
+07-02 19:50:05.720: I/ModaLog(7252): 
+
+07-02 19:50:09.405: I/ModaLog(7252): RTSP send keep alive
+07-02 19:50:09.405: I/RTSPClient(7252): GET_PARAMETER rtsp://192.168.43.59:554/stream2 RTSP/1.0
+07-02 19:50:09.405: I/RTSPClient(7252): CSeq: 6
+07-02 19:50:09.405: I/RTSPClient(7252): User-Agent: LibVLC/2.1.3 (LIVE555 Streaming Media v2014.01.21)
+07-02 19:50:09.405: I/RTSPClient(7252): Session: 3E8B6E2C
+07-02 19:50:09.405: I/RTSPClient(7252): 
+07-02 19:50:09.405: I/RTSPClient(7252): 
+07-02 19:50:09.405: I/RTSPClient(7252): 
+
+07-02 19:50:13.020: I/ModaLog(7252): RTSP send keep alive
+07-02 19:50:13.020: I/RTSPClient(7252): GET_PARAMETER rtsp://192.168.43.59:554/stream2 RTSP/1.0
+07-02 19:50:13.020: I/RTSPClient(7252): CSeq: 7
+07-02 19:50:13.020: I/RTSPClient(7252): User-Agent: LibVLC/2.1.3 (LIVE555 Streaming Media v2014.01.21)
+07-02 19:50:13.020: I/RTSPClient(7252): Session: 3E8B6E2C
+07-02 19:50:13.020: I/RTSPClient(7252): 
+07-02 19:50:13.020: I/RTSPClient(7252): 
+07-02 19:50:13.020: I/RTSPClient(7252): 
+
+
+07-02 19:50:13.605: I/RTSPClient(7252): doTeardown
+07-02 19:50:13.605: I/System.out(7252): TEARDOWN rtsp://192.168.43.59/stream2/ RTSP/1.0
+07-02 19:50:13.605: I/System.out(7252): CSeq: 8
+07-02 19:50:13.605: I/System.out(7252): User-Agent: LibVLC/2.1.3 (LIVE555 Streaming Media v2014.01.21)
+07-02 19:50:13.605: I/System.out(7252): Session: 3E8B6E2C
+07-02 19:50:13.605: I/System.out(7252): 
+07-02 19:50:13.605: I/System.out(7252): 
+07-02 19:50:13.605: I/System.out(7252): 
